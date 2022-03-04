@@ -1,0 +1,356 @@
+/* Author: Miguel Morel                                                                                                                       
+Assignment: Project 1
+Student ID: 800877651   */
+header
+{
+    text-align: center;
+    font-size:150%;
+    font-weight: bolder;
+}
+
+header > h1
+{
+    position:relative;
+    bottom:40px;
+    right:240px;
+}
+
+#logo
+{
+    position:relative;
+    right:120px;
+    top:30px;
+}
+
+nav
+{
+    border-top-style:solid;
+    border-bottom-style:solid;
+    border-width: thin;
+    margin-left:8%;
+    margin-right:8%;
+}
+
+nav > a 
+{
+    padding-right:100px;
+    font-weight: bold;
+    color:white;
+    text-decoration:none;
+}
+
+/* #user-menu
+{
+    color: darkgrey;
+} */
+
+#homeLink
+{
+    display:inline;
+    border-top-style:solid;
+    border-width:medium;
+    border-color:transparent;
+    padding-top:16px;
+}
+
+#homeLink:hover
+{
+    border-color:white;
+}
+
+nav > a > div
+{
+    display:inline;
+}
+
+nav > a > div:hover
+{
+    border-top-style:solid;
+    border-width:medium;
+    border-color:white;
+    padding-top:16px;
+}
+
+.dropbtn
+{
+    padding-right:100px;
+}
+
+.dropbtn:hover
+{
+    cursor:pointer;
+}
+
+.dropdown
+{
+    display:inline-block;
+    padding-right:0;
+}
+
+.dropContent
+{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top:285px;
+}
+
+.dropContent > a
+{
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropContent 
+{
+    display: block;
+    cursor:pointer;
+}
+
+
+.dropContent a:hover 
+{
+    background-color: #ddd;
+}
+
+main
+{
+    margin-left:8%;
+    margin-right:8%;
+}
+
+main > div > h2
+{
+    font-size: xx-large;
+}
+
+.slideshow
+{
+    width:100%;
+    height:auto;
+    padding-top:1%;
+}
+
+.slideImage
+{
+    width:50%;
+    height:625px;
+}
+
+#firstImage
+{
+    float:left;
+}
+
+#homeHeading
+{
+    padding-left:60px;
+    padding-top: 200px;
+    height:450px;
+}
+
+
+#headingOne
+{
+    font-size:x-large;
+    margin-right:50%;
+    text-align: justify;
+    line-height:50px;
+}
+
+#homeImage
+{
+    float:right;
+    width: 40%;
+    height:auto;
+    position:relative;
+    bottom:150px;
+    right:50px;
+}
+
+h3
+{
+    max-height:5%;
+    font-size:32px;
+    font-weight:normal;
+    text-align:center;
+}
+
+footer
+{
+    margin-top:auto;
+}
+
+footer > nav
+{
+    text-align:center;
+}
+
+body
+{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+input[type=text], select 
+{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=button] 
+{
+    background-color: #5da271;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size:x-large;
+  }
+
+input[type=button]:hover 
+{
+    background-color: #45a049;
+}
+
+.form
+{
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.form input
+{
+    width:100%;
+    clear:both;
+}
+
+input[type=email]
+{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=tel]
+{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label
+{
+    font-size:25px;
+}
+
+.centeredHeading
+{
+    text-align:center;
+    font-size:32px;
+    font-weight:bolder;
+}
+
+.hoursCell
+{
+    border-bottom:1px solid #ddd;
+    font-size:x-large;
+    height:75px;
+}
+
+.storeTable tr:nth-child(even) 
+{
+    background-color: #f2f2f2;
+}
+
+.storeTable
+{
+    width:30%;
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse:collapse;
+}
+
+.topCell
+{
+    border-top:1px solid #ddd;
+}
+
+#centeredCell
+{
+    text-align:center;
+    border-bottom:1px solid #ddd;
+    font-size:x-large;
+    height:75px;
+}
+
+#topFirstCell
+{
+    border-bottom:1px solid #ddd;
+    font-size:x-large;
+    height:75px;
+}
+
+.galleryTable
+{
+    width:55%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.galleryImage
+{
+    width:500px;
+    height:300px;
+}
+
+#airHeading
+{
+    font-size:30px;
+    font-weight: bolder;
+}
+
+#airHeadingTwo
+{
+    font-size:xx-large;
+    font-weight:bold;
+    text-align:center;
+}
+
+.airDiv
+{
+    margin-left:10%;
+}
+
+#aeratePara
+{
+    font-size:18px;
+    line-height: 40px;
+    padding-top:2%;
+}
+
+#aerateImg
+{
+    float:right;
+    width:700px;
+    height:400px;
+    position:relative;
+    top:-75px;
+}
