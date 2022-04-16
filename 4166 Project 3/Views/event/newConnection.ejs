@@ -1,0 +1,27 @@
+<%- include('../partials/header.ejs')%>    
+      <div class="LCont"></div>
+      <div class="CCont">
+          <form class="fCont" action = '/events' method = 'POST'>
+            <h3 class="topicTitle">Type</h3>
+            <input type="text" name="category" placeholder="Category" required>
+            <h3 class="titleTitle">Title</h3>
+            <input type="text" id="title" name="title" placeholder="Title" required>
+            <h3 class="hostTitle">Host</h3>
+            <input type="text" id="host" name="host" placeholder="Host" required>
+            <h3 class="detailsTitle">Details</h3>
+            <input type="text" id="details" name="details" placeholder="Details" required>
+            <h3 class="locationTitle">Location</h3>
+            <input type="text" id="location" name="location" placeholder="Location" required>
+            <h3 class="dateTitle">Date</h3>
+            <input type="date" id="date" name="date" required>
+            <h3 class="startTitle">Start</h3>
+            <input type="time" id="startTime" name="startTime" required>
+            <h3 class="endTitle">End</h3>
+            <input type="time" id="endTime" name="endTime" required>
+            <h3 class="imageTitle">Image URL</h3>
+            <input type="url" id="image" name="image" placeholder="Image URL" required>
+            <input class="createEventBtn" type="submit" value="Create">
+          </form>
+      </div>  
+      <div class="RCont"></div>
+<%- include('../partials/footer.ejs')%>

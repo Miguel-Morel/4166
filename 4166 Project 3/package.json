@@ -1,0 +1,20 @@
+{
+  "name": "4166 Project 3",
+  "version": "1.0.0",
+  "description": "Database Integration with MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lijuan Cao",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "luxon": "^2.3.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.2.9",
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2"
+  }
+}
