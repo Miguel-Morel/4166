@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  button:hover, .createEventBtn:hover {
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: rgb(221, 221, 221);
+  }
+  
+  a {
+    text-decoration-color: black;
+    text-decoration: none;
+    color: black;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0%;
+  }
+  
+
+  .LCont{
+    padding: 10px;
+    height: 25rem;
+  }
+  .CCont{
+    padding: 10px;
+    height: 25rem;
+  }
+  .RCont {
+    padding: 10px;
+    height: 25rem;
+  }
+  
+  /* Style the left column */
+  .LCont {
+    grid-area: left;
+  }
+  
+  /* Style the middle column */
+  .CCont {
+    grid-area: middle;
+    display: grid;
+    margin-top: 5%;
+  }
+  
+  .fCont {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
+  }
+  
+  .fCont h3{
+      margin-left: 30%;
+  }
+  
+  .fCont input{
+      margin-right: 20%;
+  }
+  
+  .fCont select{
+    margin-right: 20%;
+  }
+  
+  .createEventBtn{
+      margin-left: 30%;
+      margin-top: 5%;
+      font-size: 25px;
+  }
+
+  .RCont {
+    grid-area: right;
+  }
+  
+  
+  

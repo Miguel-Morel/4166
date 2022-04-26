@@ -1,0 +1,46 @@
+<%- include('../partials/header.ejs')%>     
+      <div class="LCont">
+      </div>
+      <div class="CCont">
+        <h3 class="eventTitle"><%=event.title%></h3>
+          <ul class="eventTop">
+            <% if(event.image){%>
+              <img src=<%=event.image%>><%}%>
+            <!-- <li class="host">Host: <%=event.host%></li> -->
+            <li>Created by: <%= event.author.firstName%> <%= event.author.lastName%></li>
+            <li class="date">Date: <%=event.date%></li>
+            <li class="time">StartTime: <%=event.startTime%></li>
+            <li class="time">EndTime: <%=event.endTime%></li>
+            <li class="location">Location: <%=event.location%></li>
+            <h3>Details</h3>
+            <ul>
+                <li><%=event.details%></li>
+            </ul>
+          </ul>
+          <div class="eventBottom"></div>
+      </div>  
+      <div class="RCont">
+        
+        <h3><%=rsvp%> People are going</h3>
+        <% if(event.author.id === user){ %>
+        <form>
+          
+          
+          <button type="submit" formmethod="GET" formaction="/events/<%=event.id%>/edit">Update</button>
+          <button type="submit" formmethod="POST" formaction="/events/<%=event.id%>?_method=DELETE">Delete</button>
+      
+        </form>
+        <%} else {%>
+          <%if(user){%>
+
+          <form method="POST" action="/events/<%=event.id%>/rsvp">
+            <button type="submit" name="rsvp" value="YES">YES</button>
+            <button type="submit" name="rsvp" value="NO">NO</button>
+            <button type="submit" name="rsvp" value="MAYBE">MAYBE</button>
+          </form>
+        <%}%>
+            
+            <%}%>
+      
+      </div>
+<%- include('../partials/footer.ejs')%>

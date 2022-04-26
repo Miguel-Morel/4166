@@ -1,0 +1,55 @@
+
+<%- include('../partials/header.ejs')%>
+<div class = "container-fluid">
+    <h2>Welcome, <%=name%></h2>
+    <%if(events.length) {%>
+        <h2>Your events:</h2>
+        <table class="table">
+            <tr>
+                <th>Event</th>
+                <th>Category</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        
+        <%events.forEach(event => {%>
+            <tr>
+                <td><%=event.title%></td>
+                <td><%=event.category%></td>
+                <td><form><button class="btn btn-primary" formmethod="get" formaction="/events/<%=event.id%>/edit">Update</button></form></td>
+                <td><form><button class="btn btn-danger" formmethod="post" formaction="/events/<%=event._id%>?_method=DELETE">Delete</button></form></td>
+            </tr>
+                
+        <%});%>
+        </table>
+    <%}else {%>
+        <p>No events yet</p>
+    <%}%>
+    
+
+    
+    <%if(rsvps.length) {%>
+        <h2>Following events were RSVPed:</h2>
+        <table class="table">
+            <tr>
+                <th>Event Name</th>
+                <th>Status</th>
+            </tr>
+        <%rsvps.forEach(element => {%>
+            <tr>
+                <td> <a href = "/events/<%= element.event.id%>"><p><%=element.event.title%></p></a></td>
+                <td><%=element.status%></td>
+                
+        <%});
+    }
+
+
+    else {%>
+        <h1>No rspved events yet</h1>
+
+    <%}%>
+
+    </div>
+    <%- include('../partials/footer.ejs')%>
+
+    
