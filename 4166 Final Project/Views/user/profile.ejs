@@ -29,15 +29,17 @@
 
     
     <%if(rsvps.length) {%>
-        <h2>Following events were RSVPed:</h2>
+        <h2>Events RSVPed to:</h2>
         <table class="table">
             <tr>
                 <th>Event Name</th>
+                <th>Category</th>
                 <th>Status</th>
             </tr>
         <%rsvps.forEach(element => {%>
             <tr>
                 <td> <a href = "/events/<%= element.event.id%>"><p><%=element.event.title%></p></a></td>
+                <td><%=element.event.category%></td>
                 <td><%=element.status%></td>
                 
         <%});

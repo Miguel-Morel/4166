@@ -55,7 +55,11 @@ exports.create = (req, res, next)=>{
     })
     .catch(err=>{
         if(err.name === 'ValidationError' ) {
-            err.status = 400;
+            // err.status = 400;
+
+            //adding flash message for error and redirect to back
+            req.flash('error', err.message);
+            return res.redirect('back');
         }
         next(err);
     });
@@ -124,9 +128,16 @@ exports.edit = (req, res, next)=>{
    
     model.findById(id)
     .then(event=>{
+
+        //add flash message
+        req.flash('success', 'You have successfully edited an event');
+
         return res.render('./event/edit', {event});
     })
-    .catch(err=>next(err));
+    .catch(err=>{
+        
+        next(err);
+    });
 };
 
 
@@ -163,12 +174,16 @@ exports.update = (req, res, next)=>{
 
     model.findByIdAndUpdate(id, event, {useFindAndModify: false, runValidators: true})
     .then(event=>{
+
+        //add flash message
+        req.flash('success', 'You have successfully updated an event');
+
         return res.redirect('/events/'+id);
     })
     .catch(err=> {
         if(err.name === 'ValidationError') {
             req.flash('error', err.message);
-            return res.redirect('/back');
+            return res.redirect('back');
         }
         next(err);
     });
@@ -183,6 +198,10 @@ exports.delete = (req, res, next)=>{
     
     model.findByIdAndDelete(id, {useFindAndModify: false})
     .then(event =>{
+
+        //add flash message
+        req.flash('success', 'You have successfully deleted an event');
+
         res.redirect('/events');
     })
     .catch(err=>next(err));
@@ -256,6 +275,7 @@ exports.rsvp = (req, res, next)=>{
     });
 }
 
+//CHECK IF NEEDED AT ALL
 //delete rsvp
 exports.deleteRsvp = (req, res, next)=>{
     let id = req.params.id;

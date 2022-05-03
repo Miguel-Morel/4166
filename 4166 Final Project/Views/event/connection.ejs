@@ -6,7 +6,7 @@
           <ul class="eventTop">
             <% if(event.image){%>
               <img src=<%=event.image%>><%}%>
-            <!-- <li class="host">Host: <%=event.host%></li> -->
+            
             <li>Created by: <%= event.author.firstName%> <%= event.author.lastName%></li>
             <li class="date">Date: <%=event.date%></li>
             <li class="time">StartTime: <%=event.startTime%></li>
@@ -26,17 +26,17 @@
         <form>
           
           
-          <button type="submit" formmethod="GET" formaction="/events/<%=event.id%>/edit">Update</button>
-          <button type="submit" formmethod="POST" formaction="/events/<%=event.id%>?_method=DELETE">Delete</button>
+          <button style="background-color: green; color: white" type="submit" formmethod="GET" formaction="/events/<%=event.id%>/edit">Update</button>
+          <button style="background-color: red; color: white" type="submit" formmethod="POST" formaction="/events/<%=event.id%>?_method=DELETE">Delete</button>
       
         </form>
         <%} else {%>
           <%if(user){%>
 
           <form method="POST" action="/events/<%=event.id%>/rsvp">
-            <button type="submit" name="rsvp" value="YES">YES</button>
-            <button type="submit" name="rsvp" value="NO">NO</button>
-            <button type="submit" name="rsvp" value="MAYBE">MAYBE</button>
+            <button style="background-color: green; color: white" type="submit" name="rsvp" value="YES">YES</button>
+            <button style="background-color: red; color: white" type="submit" name="rsvp" value="NO">NO</button>
+            <button style="background-color: blueviolet; color: white"type="submit" name="rsvp" value="MAYBE">MAYBE</button>
           </form>
         <%}%>
             

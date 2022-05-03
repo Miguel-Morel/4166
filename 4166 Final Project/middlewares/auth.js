@@ -49,3 +49,28 @@ exports.isAuthor = (req, res, next)=>{
     .catch(err=>next(err));
 }
 
+
+exports.isNotAuthor = (req, res, next)=>{
+    let id = req.params.id;
+
+    Event.findById(id)
+    .then(event=>{
+        if(event) {
+            // console.log(req.session.user);
+            // console.log(event.author);
+            if(event.author != req.session.user) {
+                return next();
+            }
+            else {
+                let err = new Error('You are the author of this event. Unauthorized RSVP attempt denied.');
+                err.status = 401;
+                return next(err);
+            }
+        } else {
+            let err = new Error('Cannot find an event with id ' + id);
+            err.status = 404;
+            return next(err);
+        }
+    })
+    .catch(err=>next(err));
+}
